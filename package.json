@@ -1,8 +1,8 @@
 {
-  "name": "mytrust",
-  "displayName": "mytrust",
-  "trustName": "mytrust Trust",
-  "packagename": "com.oruhelp.ngos.mytrust",
+  "name": "kalari",
+  "displayName": "Kalari",
+  "trustName": "Kalari Trust",
+  "packagename": "com.oruhelp.ngos.kalari",
   "version": "1.0.1",
   "versioncode": 1,
   "private": true,
