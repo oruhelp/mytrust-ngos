@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "532464077344",
+    "firebase_url": "https://oruhelp-prod.firebaseio.com",
+    "project_id": "oruhelp-prod",
+    "storage_bucket": "oruhelp-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532464077344:android:622c1e231acd4040b64a45",
+        "android_client_info": {
+          "package_name": "com.oruhelp.ngos.aarathy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532464077344-uldvn0t5njv4rn1np3i8i3a82043sbqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnx12V3p3x8a0hxAas_r6qk87T0y8YBAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532464077344-uldvn0t5njv4rn1np3i8i3a82043sbqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

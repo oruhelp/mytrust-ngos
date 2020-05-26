@@ -1,0 +1,46 @@
+name: build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+  build-android:
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+      - name: Update Application and Package Name
+        run: |
+          npm run android-rename
+      - name: Copy app specific data
+        run: |
+          npm run copy-files
+      - name: Set Icon
+        run: |
+          npm run set-icon
+      - name: Build Android Release APK
+        run: |
+          npm run android-build-apk
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
+      - name: Build Android Release Bundle
+        run: |
+          npm run android-build-bundle
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.bundle
+          path: android/app/build/outputs/bundle/release/

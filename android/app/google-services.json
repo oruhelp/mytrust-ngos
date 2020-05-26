@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "279546162735",
+    "firebase_url": "https://oru-help-beta.firebaseio.com",
+    "project_id": "oru-help-beta",
+    "storage_bucket": "oru-help-beta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279546162735:android:cda477ff02b4a058a620da",
+        "android_client_info": {
+          "package_name": "com.oruhelp.ngos.mytrust"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279546162735-v3of0o165f6kh40m44hrn25dqaergak1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfNqm4Ik0vMQ3u9htyjB0FMmI0VzgmxxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279546162735-v3of0o165f6kh40m44hrn25dqaergak1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
