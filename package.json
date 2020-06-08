@@ -1,8 +1,8 @@
 {
-  "name": "kalari",
-  "displayName": "Kalari",
-  "trustName": "Kalari Trust",
-  "packagename": "com.oruhelp.ngos.kalari",
+  "name": "keeladi",
+  "displayName": "Keeladi",
+  "trustName": "Keeladi - Vaigai Civilization",
+  "packagename": "com.oruhelp.ngos.keeladi",
   "version": "1.0.1",
   "versioncode": 1,
   "private": true,
