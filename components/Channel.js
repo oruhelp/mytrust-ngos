@@ -16,7 +16,9 @@ import {ThemeContext} from '../services/ThemeContext';
 import {UserContext} from '../services/UserContext';
 import {Icon} from 'react-native-elements';
 import database from '@react-native-firebase/database';
-import {name} from '../package.json';
+import messaging from '@react-native-firebase/messaging';
+import {name, trustName} from '../package.json';
+import {sendPushNotification} from '../services/PushNotifications';
 
 const Channel = props => {
   const theme = React.useContext(ThemeContext);
@@ -43,6 +45,25 @@ const Channel = props => {
         });
     }
   }, [_channel.channel]);
+
+  React.useEffect(() => {
+    messaging()
+      .subscribeToTopic(`${name.toLowerCase()}-${_channel.channel}`)
+      .then(() =>
+        console.log(
+          'Subscribed to topic! - ' +
+            `${name.toLowerCase()}-${_channel.channel}`,
+        ),
+      );
+  }, []);
+
+  const sendNotification = _description => {
+    sendPushNotification(`/topics/${name.toLowerCase()}-${_channel.channel}`, {
+      title: trustName,
+      body: _description,
+      tag: name.toLowerCase(),
+    });
+  };
 
   const isEditingEnabled = () => {
     if (_channel.custompage && _channel.custompage === ORUHELP) {
@@ -303,6 +324,13 @@ const Channel = props => {
                 return (
                   <Card
                     {...channelData[_cardId]}
+                    sendNotification={
+                      channelData &&
+                      channelData.properties &&
+                      channelData.properties.notifications
+                        ? sendNotification
+                        : undefined
+                    }
                     enableEditing={isEditingEnabled()}
                     deleteCard={() => deleteCard(_cardId)}
                     moveUp={() => moveUp(_cardId)}

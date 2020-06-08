@@ -115,6 +115,19 @@ const Card = props => {
         return;
     }
   };
+  const sendNotification = () => {
+    if (
+      props.components &&
+      props.components.order &&
+      props.components.order.length > 0
+    ) {
+      props.sendNotification(
+        props.components[props.components.order[0]].value.toString(),
+      );
+    } else {
+      props.sendNotification('New Item added');
+    }
+  };
   return (
     <View style={{position: 'relative'}}>
       <TouchableHighlight underlayColor="none" style={styles.margin}>
@@ -152,6 +165,27 @@ const Card = props => {
               />
             </MenuTrigger>
             <MenuOptions>
+              {props.sendNotification && (
+                <MenuOption>
+                  <Button
+                    onPress={sendNotification}
+                    color={theme.palette.primary.dark}
+                    titleStyle={{color: theme.palette.primary.dark}}
+                    type="clear"
+                    title="Send Notification"
+                    icon={
+                      <Icon
+                        name="notifications"
+                        color={theme.palette.primary.dark}
+                        iconStyle={{
+                          marginRight: 25,
+                        }}
+                      />
+                    }
+                  />
+                </MenuOption>
+              )}
+
               <MenuOption>
                 <Button
                   onPress={props.moveUp}

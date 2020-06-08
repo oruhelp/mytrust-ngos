@@ -1,9 +1,9 @@
 {
-  "name": "keeladi",
-  "displayName": "Keeladi",
-  "trustName": "Keeladi - Vaigai Civilization",
-  "packagename": "com.oruhelp.ngos.keeladi",
-  "version": "1.0.1",
+  "name": "mytrust",
+  "displayName": "mytrust",
+  "trustName": "My Trust Name",
+  "packagename": "com.oruhelp.ngos.mytrust",
+  "version": "1.0.6",
   "versioncode": 1,
   "private": true,
   "scripts": {

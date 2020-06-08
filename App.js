@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StatusBar, ActivityIndicator, View, Text} from 'react-native';
+import {StatusBar, ActivityIndicator, View, Text, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {ThemeContext} from './services/ThemeContext';
 import {AppDataContext} from './services/AppDataContext';
@@ -7,6 +7,7 @@ import {UserContext} from './services/UserContext';
 import database from '@react-native-firebase/database';
 import {theme} from './constants/theme';
 import Index from './screens/Index';
+import messaging from '@react-native-firebase/messaging';
 import {MenuProvider} from 'react-native-popup-menu';
 import {name, trustName} from './package.json';
 
@@ -47,6 +48,17 @@ export default function App() {
   }, []);
 
   React.useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      Alert.alert(
+        remoteMessage.notification.title,
+        remoteMessage.notification.body,
+      );
+    });
+
+    return unsubscribe;
+  }, []);
+
+  React.useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber;
   }, []);
@@ -72,6 +84,12 @@ export default function App() {
       setInitializing(false);
     }
   }
+
+  React.useEffect(() => {
+    messaging()
+      .subscribeToTopic(`${name.toLowerCase()}-all`)
+      .then(() => console.log('Subscribed to topic!'));
+  }, []);
 
   return loading || loadingAppData || initializing ? (
     <View
