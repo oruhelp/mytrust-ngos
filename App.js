@@ -9,7 +9,7 @@ import {theme} from './constants/theme';
 import Index from './screens/Index';
 import messaging from '@react-native-firebase/messaging';
 import {MenuProvider} from 'react-native-popup-menu';
-import {name, trustName} from './package.json';
+import {name, trustName} from './app.json';
 
 export default function App() {
   const [loading, setLoading] = useState(true);

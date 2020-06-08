@@ -14,7 +14,7 @@ import {Divider, Button, Icon} from 'react-native-elements';
 
 import Page from '../components/Page';
 import Login from './Login';
-import {name} from '../package.json';
+import {name} from '../app.json';
 
 const _firebasePath = `orgs/${name.toLowerCase()}/appData`;
 function CustomDrawerContent(props) {

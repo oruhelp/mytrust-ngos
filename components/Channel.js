@@ -17,7 +17,7 @@ import {UserContext} from '../services/UserContext';
 import {Icon} from 'react-native-elements';
 import database from '@react-native-firebase/database';
 import messaging from '@react-native-firebase/messaging';
-import {name, trustName} from '../package.json';
+import {name, trustName} from '../app.json';
 import {sendPushNotification} from '../services/PushNotifications';
 
 const Channel = props => {

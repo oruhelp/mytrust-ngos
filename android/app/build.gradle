@@ -5,13 +5,13 @@ import com.android.build.OutputFile
 import groovy.json.JsonSlurper
 
 def getNpmVersion() {
-    def inputFile = new File("../package.json")
+    def inputFile = new File("../app.json")
     def packageJson = new JsonSlurper().parseText(inputFile.text)
     return packageJson["version"]
 }
 /* calculated from git commits to give sequential integers */
 def getGitVersion() {
-    def inputFile = new File("../package.json")
+    def inputFile = new File("../app.json")
     def packageJson = new JsonSlurper().parseText(inputFile.text)
     return packageJson["versioncode"].toInteger()
 }
