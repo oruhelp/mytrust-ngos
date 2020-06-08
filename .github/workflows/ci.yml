@@ -25,6 +25,9 @@ jobs:
       - name: Copy app specific data
         run: |
           npm run copy-files
+      - name: Configure
+        run: |
+          node configure.js
       - name: Set Icon
         run: |
           npm run set-icon
