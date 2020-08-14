@@ -5,7 +5,7 @@ const fs = require('fs');
 let rawPackageData = fs.readFileSync('package.json');
 let packageConfig = JSON.parse(rawPackageData);
 
-let rawAppData = fs.readFileSync(`./data/${packageConfig.name}/app.json`);
+let rawAppData = fs.readFileSync(`./app.json`);
 let appConfig = JSON.parse(rawAppData);
 
 packageConfig.name = appConfig.name;
