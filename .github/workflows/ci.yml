@@ -27,7 +27,7 @@ jobs:
           node configure.js
       - name: Update Application and Package Name
         run: |
-          npm run android-rename
+          npm run android-rename && npm run android-rename1
       - name: Set Icon
         run: |
           npm run set-icon

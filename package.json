@@ -12,6 +12,7 @@
 		"copy-files": "npx move-cli ./data/${npm_package_name}/google-services.json ./android/app/google-services.json && npx move-cli ./data/${npm_package_name}/theme.js ./constants/theme.js && npx move-cli ./data/${npm_package_name}/app.json ./app.json",
 		"set-icon": "npx react-native set-icon --path ./data/${npm_package_name}/icon --platform android",
 		"android-rename": "npx react-native-rename ${npm_package_displayName} -b ${npm_package_packagename}",
+		"android-rename1": "npx move-cli ./data/${npm_package_name}/MainActivity.java ./android/app/src/main/java/com/oruhelp/ngos/${npm_package_packagename}/MainActivity.java && npx move-cli ./data/${npm_package_name}/MainApplication.java ./android/app/src/main/java/com/oruhelp/ngos/${npm_package_packagename}/MainApplication.java",
 		"android-build-apk": "cd android && ./gradlew clean && ./gradlew assembleRelease",
 		"android-build-bundle": "cd android && ./gradlew clean && ./gradlew bundleRelease",
 		"ios": "react-native run-ios",
