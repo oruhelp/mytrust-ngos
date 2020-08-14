@@ -1,10 +1,7 @@
 {
-	"name": "aarathy",
-	"displayName": "Aarathy Trust",
-	"trustName": "Aarathy Charitable Trust",
-	"packagename": "com.oruhelp.ngos.aarathy",
-	"version": "1.0.7",
-	"versioncode": 7,
+	"name": "mytrust",
+	"version": "1.0.0",
+	"majorVersion": 1,
 	"private": true,
 	"scripts": {
 		"start": "react-native start",
@@ -65,5 +62,8 @@
 	},
 	"jest": {
 		"preset": "react-native"
-	}
+	},
+	"displayName": "Aarathy",
+	"trustName": "Aarathy Charitable Trust",
+	"packagename": "com.oruhelp.ngos.mytrust"
 }

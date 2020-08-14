@@ -19,12 +19,9 @@ jobs:
       - name: Install npm dependencies
         run: |
           npm install
-      - name: Copy app specific data
+      - name: Pre Build
         run: |
-          npm run copy-files
-      - name: Configure
-        run: |
-          node configure.js
+          node pre-build.js
       - name: Update Application and Package Name
         run: |
           npm run android-rename && npm run android-rename1
