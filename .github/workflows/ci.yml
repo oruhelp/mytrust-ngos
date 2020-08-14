@@ -24,7 +24,7 @@ jobs:
           node pre-build.js
       - name: Update Application and Package Name
         run: |
-          npm run android-rename && npm run android-rename1
+          npm run android-rename
       - name: Set Icon
         run: |
           npm run set-icon
