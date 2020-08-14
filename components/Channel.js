@@ -57,12 +57,15 @@ const Channel = props => {
       );
   }, []);
 
-  const sendNotification = _description => {
+  const sendNotification = (_cardId, _description) => {
     sendPushNotification(`/topics/${name.toLowerCase()}-${_channel.channel}`, {
       title: trustName,
       body: _description,
       tag: name.toLowerCase(),
     });
+    database()
+        .ref(`orgs/${name.toLowerCase()}/channels/${_channel.channel}/${_cardId}/properties`)
+        .set({"notificationsSent":true})
   };
 
   const isEditingEnabled = () => {
@@ -323,11 +326,18 @@ const Channel = props => {
               ) {
                 return (
                   <Card
+                    cardId={_cardId}
                     {...channelData[_cardId]}
                     sendNotification={
                       channelData &&
                       channelData.properties &&
-                      channelData.properties.notifications
+                      channelData.properties.notifications &&
+                      ((channelData[_cardId].properties &&
+                        channelData[_cardId].properties.notificationsSent &&
+                        channelData[_cardId].properties.notificationsSent !==
+                          true) ||
+                        !channelData[_cardId].properties ||
+                        !channelData[_cardId].properties.notificationsSent)
                         ? sendNotification
                         : undefined
                     }

@@ -122,6 +122,7 @@ const Card = props => {
       props.components.order.length > 0
     ) {
       props.sendNotification(
+        props.cardId,
         props.components[props.components.order[0]].value.toString(),
       );
     } else {
